@@ -51,9 +51,9 @@ jobs:
             - PYTHON_VERSION=${{ github.event.inputs.baseImage }}
           context: .
           file: ${{ env.IMAGE_BASE }}/Dockerfile.${{ env.IMAGE_KEY }}
-          platforms:
-            - linux/amd64
-            - linux/arm64
+          platforms: |
+            linux/amd64
+            linux/arm64
           push: true
           tags: |
             ${{ github.event.inputs.baseImage }}
