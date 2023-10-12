@@ -58,4 +58,5 @@ RUN mkdir -p ${DLIB_DIR} \
     && sed -i'' -e "s/_cmake_extra_options = \[\]/_cmake_extra_options = \['-DDLIB_NO_GUI_SUPPORT=ON'\]/" setup.py \
     && python3 -m venv venv \
     && pip3 install build \
-    && python3 -m build --wheel
+    && python3 -m build --wheel \
+    && python3 -m pip install ${DLIB_WHL_DIR}/*whl
